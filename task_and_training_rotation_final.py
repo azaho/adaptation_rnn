@@ -598,7 +598,7 @@ if __name__ == "__main__":
     if "flag" in sys.argv[0]:
         shutil.copy("analysis_and_figures_flag.ipynb", directory + "analysis_and_figures.ipynb")
     else:
-        shutil.copy("analysis_and_figures_tkn.ipynb", directory + "analysis_and_figures.ipynb")
+        shutil.copy("analysis_and_figures.ipynb", directory + "analysis_and_figures.ipynb")
 
     # replace parsed args with their values in the copied file (for analysis)
     with open(directory + "task_and_training.py", "r+") as f:
