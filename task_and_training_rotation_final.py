@@ -51,11 +51,9 @@ task_parameters = {
     "task_name": "ROTATION",
     "input_direction_units": net_size,  # how many direction-selective input units?
 
-    "delay0_from": 20, "delay0_to": 40,  # range (inclusive) for lengths of variable delays (in timesteps)
-    "delay1_from": 10, "delay1_to": 30,
-    "delay2_from": 60, "delay2_to": 80,
-    #"delay1_from": 10, "delay1_to": 90,
-    #"delay2_from": 120, "delay2_to": 160,
+    "delay0_from": 0, "delay0_to": 0,  # range (inclusive) for lengths of variable delays (in timesteps)
+    "delay1_from": 10, "delay1_to": 10,
+    "delay2_from": 60, "delay2_to": 60,
 
     "show_direction_for": 10,  # in timesteps
     "show_cue_for": 100,  # in timesteps
@@ -537,15 +535,12 @@ if __name__ == "__main__":
     # train the network and save weights
     model = Model()
 
-    print("====== SWITCHING ========")
-
     task_parameters["delay0_to"] = 0
     task_parameters["delay0_from"] = 0
     task_parameters["delay1_from"] = 10
     task_parameters["delay1_to"] = 10
     task_parameters["delay2_from"] = 60 - args.noise_delaytime
     task_parameters["delay2_to"] = 60 + args.noise_delaytime
-    #hyperparameters["train_for_steps"] = 000
     task_parameters["distractor_visible"] = args.distractor_visible
 
     # directory for results to be saved to
